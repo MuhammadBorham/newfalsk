@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'mborham6/newflaskapp'
+        DOCKER_IMAGE = 'mborham6/newflaskapp' // Replace with your desired image name
     }
 
     stages {
@@ -16,16 +16,6 @@ pipeline {
             steps {
                 script {
                     docker.build("${env.DOCKER_IMAGE}")
-                }
-            }
-        }
-
-        stage('Push Docker Image') {
-            steps {
-                script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-                        docker.image("${env.DOCKER_IMAGE}").push()
-                    }
                 }
             }
         }
