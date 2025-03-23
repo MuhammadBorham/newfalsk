@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'mborham6/newflaskapp' // Replace with your desired image name
+        DOCKER_IMAGE = 'my-custom-image' // Replace with your desired image name
     }
 
     stages {
