@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'mborham/jenkins-flask:latest' 
+        DOCKER_IMAGE = 'mborham6/jenkins-flask:latest' 
         DOCKER_HUB_CREDENTIALS = 'new-docker-credential' 
     }
 
