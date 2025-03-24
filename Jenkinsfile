@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'mborham/jenkins-flask:latest' 
-        DOCKER_HUB_CREDENTIALS = 'docker-hub-credentials' 
+        DOCKER_HUB_CREDENTIALS = 'new-docker-credential' 
     }
 
     stages {
