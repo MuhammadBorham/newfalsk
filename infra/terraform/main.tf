@@ -1,3 +1,8 @@
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "AKIA2KX4BMVVG3R5KO6G"
+  secret_key = "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"
+}
 module "vpc" {
   source       = "./modules/vpc"
   cluster_name = var.cluster_name
