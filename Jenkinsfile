@@ -29,6 +29,12 @@ pipeline {
 
         stage('Terraform Apply') {
             steps {
+                withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'Aws_Credentials',
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) 
                 dir(TF_DIR) {
                     sh """
                     terraform init -backend-config="bucket=${TF_STATE_BUCKET}"
